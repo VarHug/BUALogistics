@@ -24,6 +24,7 @@
         <div class="text">我的</div>
       </router-link>
     </div>
+    <div class="background"></div>
   </div>
 </template>
 
@@ -43,14 +44,15 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   .tab
     display flex
+    overflow hidden
     width 100%
     height 50px
-    background-color rgb(240, 248, 255)
     .tab-item
       flex 1
       text-align center
       .router-item
         display block
+        color rgb(119, 136, 153)
         .icon
           display block
           padding-top 10px
@@ -61,4 +63,20 @@ export default {
           line-height 25px
           height 25px
           font-size 12px
+        &.active
+          color rgb(205, 50, 120)
+          font-weight bold
+          .icon
+            transform scale(1.2) rotate(-360deg)
+            transition .8s
+    .background
+      position fixed
+      bottom 0
+      z-index -1
+      width 100%
+      height 50px
+      background-image url('./bgBUA.jpg')
+      background-repeat no-repeat
+      background-size cover
+      filter blur(2px)
 </style>

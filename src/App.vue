@@ -26,5 +26,6 @@ export default {
   .footer
     position fixed
     bottom 0
+    transform translateZ(0)
     border-1px-top(rgba(7, 17, 27, 0.1))
 </style>

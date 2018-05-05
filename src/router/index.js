@@ -21,5 +21,6 @@ export default new Router({
     {
       path: '/mine', component: mine
     }
-  ]
+  ],
+  linkActiveClass: 'active'
 });
