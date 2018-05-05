@@ -2,19 +2,27 @@
   <div class="tab">
     <div class="tab-item">
       <i class="icon-twitter icon"></i>
-      <div class="text">消息</div>
+      <div class="text">
+      <router-link to="/mes">消息</router-link>
+      </div>
     </div>
     <div class="tab-item">
       <i class="icon-bubbles2 icon"></i>
-      <div class="text">话题</div>
+      <div class="text">
+        <router-link to="/topic">话题</router-link>
+      </div>
     </div>
     <div class="tab-item">
       <i class="icon-hammer icon"></i>
-      <div class="text">报修</div>
+      <div class="text">
+        <router-link to="/repair">报修</router-link>
+      </div>
     </div>
     <div class="tab-item">
       <i class="icon-user-tie icon"></i>
-      <div class="text">我的</div>
+      <div class="text">
+        <router-link to="/mine">我的</router-link>
+      </div>
     </div>
   </div>
 </template>

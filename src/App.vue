@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-view></router-view>
     <bua-footer class="footer"></bua-footer>
   </div>
 </template>
