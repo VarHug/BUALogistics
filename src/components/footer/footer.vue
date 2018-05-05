@@ -1,28 +1,28 @@
 <template>
   <div class="tab">
     <div class="tab-item">
-      <i class="icon-twitter icon"></i>
-      <div class="text">
-      <router-link to="/mes">消息</router-link>
-      </div>
+      <router-link to="/mes" class="router-item">
+        <i class="icon-twitter icon"></i>
+        <div class="text">消息</div>
+      </router-link>
     </div>
     <div class="tab-item">
-      <i class="icon-bubbles2 icon"></i>
-      <div class="text">
-        <router-link to="/topic">话题</router-link>
-      </div>
+      <router-link to="/topic" class="router-item">
+        <i class="icon-bubbles2 icon"></i>
+        <div class="text">话题</div>
+      </router-link>
     </div>
     <div class="tab-item">
-      <i class="icon-hammer icon"></i>
-      <div class="text">
-        <router-link to="/repair">报修</router-link>
-      </div>
+      <router-link to="/repair" class="router-item">
+        <i class="icon-hammer icon"></i>
+        <div class="text">报修</div>
+      </router-link>
     </div>
     <div class="tab-item">
-      <i class="icon-user-tie icon"></i>
-      <div class="text">
-        <router-link to="/mine">我的</router-link>
-      </div>
+      <router-link to="/mine" class="router-item">
+        <i class="icon-user-tie icon"></i>
+        <div class="text">我的</div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -49,14 +49,16 @@ export default {
     .tab-item
       flex 1
       text-align center
-      .icon
+      .router-item
         display block
-        padding-top 10px
-        line-height 15px
-        height 15px
-        font-size 15px
-      .text
-        line-height 25px
-        height 25px
-        font-size 12px
+        .icon
+          display block
+          padding-top 10px
+          line-height 15px
+          height 15px
+          font-size 15px
+        .text
+          line-height 25px
+          height 25px
+          font-size 12px
 </style>
