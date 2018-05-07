@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div class="id"></div>
     <div class="info">
       <h1 class="title"></h1>
       <div class="releaseUnit"></div>
@@ -25,6 +24,7 @@ export default {
     this.$axios.get('/api/info').then(response => {
       if (response.data.errno === ERR_OK) {
         this.info = response.data.data;
+        console.log(this.info);
       }
     });
   },
