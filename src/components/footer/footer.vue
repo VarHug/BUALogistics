@@ -1,9 +1,9 @@
 <template>
   <div class="tab">
     <div class="tab-item">
-      <router-link to="/mes" class="router-item">
+      <router-link to="/info" class="router-item">
         <i class="icon-twitter icon"></i>
-        <div class="text">消息</div>
+        <div class="text">通知</div>
       </router-link>
     </div>
     <div class="tab-item">

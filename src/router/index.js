@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import topic from '../components/topic/topic.vue';
-import mes from '../components/mes/mes.vue';
+import info from '../components/info/info.vue';
 import repair from '../components/repair/repair.vue';
 import mine from '../components/mine/mine.vue';
 
@@ -13,7 +13,7 @@ export default new Router({
       path: '/topic', component: topic
     },
     {
-      path: '/mes', component: mes
+      path: '/info', component: info
     },
     {
       path: '/repair', component: repair

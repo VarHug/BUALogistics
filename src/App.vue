@@ -8,6 +8,8 @@
 <script type="text/ecmascript-6">
 import footer from './components/footer/footer';
 
+// const ERR_OK = 0;
+
 export default {
   data() {
     return {
