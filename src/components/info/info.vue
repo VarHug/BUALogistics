@@ -6,8 +6,8 @@
         <p class="text">适合发送各种形式的公文、消息、公告和启事</p>
         <p class="text">可针对校内/外、教职工/学生、指定部门进行区别发送</p>
       </div>
-      <div class="content">
-        <ul class="content-items">
+      <div class="content-wrapper" ref="contentWrapper">
+        <ul>
           <li class="item" v-for="(item, index) in info" :key="index">
             <div class="item-logo">
               <img width="50px" height="50px" src="./pim.png">
@@ -25,27 +25,36 @@
 </template>
 
 <script type="text/ecmascript-6">
+import BScroll from 'better-scroll';
 
-// const ERR_OK = 0;
+const ERR_OK = 0;
 
 export default {
   props: {
-    info: {
-      type: Array
-    }
+
   },
   data() {
     return {
-
+      info: []
     };
   },
   created() {
-    // this.$axios.get('/api/info').then(response => {
-    //   if (response.data.errno === ERR_OK) {
-    //     this.info = response.data.data;
-    //     console.log(this.info);
-    //   }
-    // });
+    this.$axios.get('/api/info').then(response => {
+      if (response.data.errno === ERR_OK) {
+        this.info = response.data.data;
+        console.log(this.info);
+        this.$nextTick(() => {
+          this._initScroll();
+        });
+      }
+    });
+  },
+  methods: {
+    _initScroll() {
+      this.contentScroll = new BScroll(this.$refs.contentWrapper, {
+
+      });
+    }
   },
   components: {
 
@@ -55,7 +64,11 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
   .info
-    margin 0 10px
+    position absolute
+    top 0
+    bottom 50px
+    width 100%
+    overflow hidden
     .header
       .title
         margin-bottom 8px
@@ -64,28 +77,31 @@ export default {
         margin 4px 0
         font-size 10px
         color #999999
-    .content
-      .content-items
-        .item
-          display flex
-          margin 10px 0
-          .item-logo
-            flex 0 0 50px
-          .item-main
-            flex 1
-            margin-left 10px
+    .content-wrapper
+      position absolute
+      top 52px
+      bottom 0
+      overflow hidden
+      .item
+        display flex
+        margin 10px 0
+        .item-logo
+          flex 0 0 50px
+        .item-main
+          flex 1
+          margin-left 10px
+          overflow hidden
+          .title
+            white-space nowrap
             overflow hidden
-            .title
-              white-space nowrap
-              overflow hidden
-              text-overflow ellipsis
-              font-size 15px
-              color #666
-            .releaseUnit
-              margin 5px 0 3px 0
-              font-size 10px
-              color #666666
-            .releaseTime
-              font-size 10px
-              color #999999
+            text-overflow ellipsis
+            font-size 15px
+            color #666
+          .releaseUnit
+            margin 5px 0 3px 0
+            font-size 10px
+            color #666666
+          .releaseTime
+            font-size 10px
+            color #999999
 </style>
