@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view :info="info"></router-view>
     <bua-footer class="footer"></bua-footer>
   </div>
 </template>
@@ -8,13 +8,21 @@
 <script type="text/ecmascript-6">
 import footer from './components/footer/footer';
 
-// const ERR_OK = 0;
+const ERR_OK = 0;
 
 export default {
   data() {
     return {
-
+      info: []
     };
+  },
+  created() {
+    this.$axios.get('/api/info').then(response => {
+      if (response.data.errno === ERR_OK) {
+        this.info = response.data.data;
+        console.log(this.info);
+      }
+    });
   },
   components: {
     'bua-footer': footer
