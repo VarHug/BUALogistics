@@ -1,4 +1,5 @@
 border-1px-bottom($color)
+  position relative
   &:after
     display block
     position absolute
@@ -9,6 +10,7 @@ border-1px-bottom($color)
     content ' '
 
 border-1px-top($color)
+  position relative
   &:after
     display block
     position absolute
@@ -17,6 +19,21 @@ border-1px-top($color)
     width 100%
     border-top 1px solid $color
     content ' '
+
+border-1px($color)
+  position relative
+  &:after
+    display block
+    position absolute
+    left 0
+    bottom 0
+    width 100%
+    border-top 1px solid $color
+    content ' '
+
+border-none()
+  &:after
+    display none
 
 bg-image($url)
   background-image url($url + '@2x.png')

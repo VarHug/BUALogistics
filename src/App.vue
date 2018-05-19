@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <div class="router-wrapper">
+      <router-view></router-view>
+    </div>
     <bua-footer class="footer"></bua-footer>
   </div>
 </template>
@@ -28,9 +30,18 @@ export default {
 <style lang="stylus" rel="stylesheet/stylus">
   @import './common/stylus/mixin.styl'
 
+#app
+  position relative
+  width 100%
+  height 100%
+  .router-wrapper
+    position absolute
+    top 0
+    bottom 50px
+    width 100%
+    overflow hidden
   .footer
     position fixed
     bottom 0
     transform translateZ(0)
-    border-1px-top(rgba(7, 17, 27, 0.1))
 </style>
