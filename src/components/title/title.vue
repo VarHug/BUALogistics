@@ -1,5 +1,5 @@
 <template>
-  <div class="title">
+  <div class="v-title">
     <div class="line"></div>
     <div class="text">{{contentText}}</div>
     <div class="line"></div>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .title
+  .v-title
     display flex
     .line
       flex 1
