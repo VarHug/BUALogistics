@@ -7,15 +7,15 @@
       </router-link>
     </div>
     <div class="tab-item">
-      <router-link to="/topic" class="router-item">
+      <router-link to="/find" class="router-item">
         <i class="icon-bubbles2 icon"></i>
-        <div class="text">话题</div>
+        <div class="text">失物招领</div>
       </router-link>
     </div>
     <div class="tab-item">
       <router-link to="/repair" class="router-item">
         <i class="icon-hammer icon"></i>
-        <div class="text">报修</div>
+        <div class="text">后勤报修</div>
       </router-link>
     </div>
     <div class="tab-item">
@@ -64,7 +64,7 @@ export default {
           height 25px
           font-size 12px
         &.active
-          color rgb(205, 50, 120)
+          color #ffffff
           font-weight bold
           .icon
             transform scale(1.2) rotate(-360deg)

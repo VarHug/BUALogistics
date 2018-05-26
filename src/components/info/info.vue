@@ -1,28 +1,28 @@
 <template>
-  <div>
-    <div class="info">
-      <div class="header border-1px">
-        <h3 class="title">通知/NOTICE</h3>
-        <p class="text">适合发送各种形式的公文、消息、公告和启事</p>
-        <p class="text">可针对校内/外、教职工/学生、指定部门进行区别发送</p>
-      </div>
-      <div class="content-wrapper" ref="contentWrapper">
-        <ul>
-          <li class="item" v-for="(item, index) in info" :key="index">
-            <div class="item-logo">
-              <img width="30px" height="30px" src="./pim.png">
+  <div class="info">
+    <div class="header border-1px">
+      <h3 class="title">通知/NOTICE</h3>
+      <p class="text">适合发送各种形式的公文、消息、公告和启事</p>
+      <p class="text">可针对校内/外、教职工/学生、指定部门进行区别发送</p>
+    </div>
+    <div class="content-wrapper" ref="contentWrapper">
+      <ul>
+        <li class="item" v-for="(item, index) in info" :key="index">
+          <div class="item-logo">
+            <img width="30px" height="30px" src="./pim.png">
+          </div>
+          <div class="item-main border-1px">
+            <div class="title">{{item.title}}</div>
+            <div class="releaseUnit">{{item.releaseUnit}}</div>
+            <div class="releaseTime">{{item.releaseTime}}</div>
+            <div class="icon-wrapper" @click="showDetail(item)">
+              <i class="icon-arrow-right2 icon"></i>
             </div>
-            <div class="item-main border-1px">
-              <div class="title">{{item.title}}</div>
-              <div class="releaseUnit">{{item.releaseUnit}}</div>
-              <div class="releaseTime">{{item.releaseTime}}</div>
-              <div class="icon-wrapper" @click="showDetail(item)">
-                <i class="icon-arrow-right2 icon"></i>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <transition name="fade">
       <div class="detail" v-show="detailShow">
         <div class="detail-wrapper">
           <div class="detail-main">
@@ -50,7 +50,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -75,7 +75,6 @@ export default {
     this.$axios.get('/api/info').then(response => {
       if (response.data.errno === ERR_OK) {
         this.info = response.data.data;
-        // console.log(this.info);
         this.$nextTick(() => {
           this._initScroll();
         });
@@ -106,11 +105,6 @@ export default {
   @import "../../common/stylus/mixin";
 
   .info
-    // position absolute
-    // top 0
-    // bottom 50px
-    // width 100%
-    // overflow hidden
     .header
       padding-bottom 5px
       color #ffffff
@@ -125,7 +119,7 @@ export default {
         color #999999
     .content-wrapper
       position absolute
-      top 60px
+      top 61px
       bottom 0
       width 100%
       overflow hidden
@@ -214,4 +208,8 @@ export default {
           height 32px
           margin 10px auto
           font-size 32px
+      &.fade-enter-active, &.fade-leave-active
+          transition: all 1s
+      &.fade-enter, &.fade-leave-active
+          opacity: 0
 </style>

@@ -15,6 +15,7 @@ const app = express()
 // mock数据
 var appData = require('../data.json');
 var info = appData.info;
+var find = appData.find;
 var apiRoutes = express.Router();
 app.use('/api', apiRoutes);
 
@@ -57,6 +58,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           errno: 0,
           data: info
         });
+      });
+      app.get('/api/find', (req, res) => {
+        res.json({
+          errno: 0,
+          data: find
+        })
       });
     }
   },
