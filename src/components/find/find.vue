@@ -5,11 +5,11 @@
       <p class="text">如果你丢了东西，你要第一时间来这里找；</p>
       <p class="text">如果你捡到了东西，在这里寻找失主。大家帮助大家！</p>
     </div>
-    <div class="select">
-      <span class="block" :class="{'active':selectType===0}" @click="select(0)">寻找中</span>
-      <span class="block" :class="{'active':selectType===1}" @click="select(1)">已找回</span>
-      <span class="block" :class="{'active':selectType===2}" @click="select(2)">招领中</span>
-      <span class="block" :class="{'active':selectType===3}" @click="select(3)">已归还</span>
+    <div class="select-wrapper">
+      <v-select :selectType="selectType" :type="0" :text="'寻找中'" @select="findSelect"></v-select>
+      <v-select :selectType="selectType" :type="1" :text="'已找回'" @select="findSelect"></v-select>
+      <v-select :selectType="selectType" :type="2" :text="'招领中'" @select="findSelect"></v-select>
+      <v-select :selectType="selectType" :type="3" :text="'已归还'" @select="findSelect"></v-select>
     </div>
     <div class="content-wrapper" ref="contentWrapper">
       <ul class="content">
@@ -33,6 +33,7 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll';
+import select from '../select/select';
 
 const STATE_LOSE = 0; // 寻找中
 const STATE_FIND = 1; // 已找回
@@ -74,12 +75,15 @@ export default {
         this.scroll.refresh();
       }
     },
-    select(type) {
+    findSelect(type) {
       this.selectType = type;
+      this.$nextTick(() => {
+        this.scroll.refresh();
+      });
     }
   },
   components: {
-
+    'v-select': select
   }
 };
 </script>
@@ -100,23 +104,10 @@ export default {
       margin 4px 0
       font-size 10px
       color #999999
-  .select
+  .select-wrapper
     padding 5px 0
     text-align center
     background-color #f3f5f7
-    .block
-      display inline-block
-      padding 8px 12px
-      margin-right 8px
-      line-height 16px
-      border-radius 3px
-      font-size 12px
-      color #4d555d
-      background-color rgba(0, 160, 220, .2)
-      &.active
-        font-weight 400
-        color #ffffff
-        background-color #00a0dc
   .content-wrapper
     position absolute
     top 103px
@@ -128,8 +119,6 @@ export default {
       display flex
       padding 15px 5px
       border-1px(rgba(7, 17, 27, 0.1))
-      &:last-child
-        border-none()
       .avatar
         flex 0 0 50px
         margin-right 15px

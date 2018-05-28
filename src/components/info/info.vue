@@ -14,7 +14,7 @@
           <div class="item-main border-1px">
             <div class="title">{{item.title}}</div>
             <div class="releaseUnit">{{item.releaseUnit}}</div>
-            <div class="releaseTime">{{item.releaseTime}}</div>
+            <div class="releaseTime">{{item.releaseTime | formatDate}}</div>
             <div class="icon-wrapper" @click="showDetail(item)">
               <i class="icon-arrow-right2 icon"></i>
             </div>
