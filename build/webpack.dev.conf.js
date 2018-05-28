@@ -17,6 +17,7 @@ var appData = require('../data.json');
 var info = appData.info;
 var find = appData.find;
 var repair = appData.repair;
+var user = appData.user;
 var apiRoutes = express.Router();
 app.use('/api', apiRoutes);
 
@@ -70,6 +71,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         res.json({
           errno: 0,
           data: repair
+        })
+      });
+      app.get('/api/user', (req, res) => {
+        res.json({
+          errno: 0,
+          data: user
         })
       });
     }
