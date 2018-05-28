@@ -12,9 +12,7 @@ Vue.config.productionTip = false;
 
 Vue.prototype.$axios = Axios;
 Vue.filter('formatDate', (time) => {
-  console.log(time);
   let date = new Date(time);
-  console.log(date);
   return formatDate(date, 'yyyy-MM-dd hh:mm');
 });
 
