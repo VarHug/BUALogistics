@@ -1,5 +1,5 @@
 <template>
-  <div class="repair">
+  <div class="repair" ref="repair">
     <ul class="content">
       <li class="repair-item" v-for="(item, index) in repair" :key="index">
         <div class="consult">
@@ -7,7 +7,7 @@
           <div class="consult-right">
             <p class="consult-text">咨询内容：{{item.content}}</p>
             <span class="consult-author">咨询人：{{item.author}}</span>
-            <span class="consult-time">咨询时间：{{item.time}}</span>
+            <span class="consult-time">咨询时间：{{item.time | formatDate}}</span>
           </div>
         </div>
         <div class="reply">
@@ -20,6 +20,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+import BScroll from 'better-scroll';
 
 const ERR_OK = 0;
 
@@ -33,11 +34,22 @@ export default {
     this.$axios.get('/api/repair').then(response => {
       if (response.data.errno === ERR_OK) {
         this.repair = response.data.data;
-        // this.$nextTick(() => {
-        //   this._initScroll();
-        // });
+        this.$nextTick(() => {
+          this._initScroll();
+        });
       }
     });
+  },
+  methods: {
+    _initScroll() {
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.repair, {
+
+        });
+      } else {
+        this.scroll.refresh();
+      }
+    }
   },
   components: {
 
@@ -49,6 +61,10 @@ export default {
 @import "../../common/stylus/mixin";
 
 .repair
+  position absolute
+  top 0
+  left 0
+  bottom 0
   .content
     .repair-item
       margin 0 10px
