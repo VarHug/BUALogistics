@@ -41,6 +41,7 @@
           </li>
         </ul>
       </div>
+      <cube-button @click="showPicker">失物招领</cube-button>
       <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     </div>
   </div>
@@ -50,14 +51,30 @@
 import split from '../split/split';
 import confirm from '../confirm/confirm';
 import BScroll from 'better-scroll';
+import {stateList, typeList, objectList} from '../../common/js/lostProperty.js';
 
 const ERR_OK = 0;
 const STATE_LOSE = 0; // 寻找中
 const STATE_FIND = 1; // 已找回
 const STATE_DRAW = 2; // 招领中
 const STATE_BACK = 3; // 已归还
+const lostPropertyData = stateList;
+lostPropertyData.forEach((state) => {
+  state.children = typeList;
+  state.children.forEach((type) => {
+    type.children = objectList[type.value];
+  });
+});
 
 export default {
+  mounted() {
+    this.lostPropertyPicker = this.$createCascadePicker({
+      title: '失物招领',
+      data: lostPropertyData,
+      onSelect: this.selectHandle,
+      onCancel: this.cancelHandle
+    });
+  },
   data() {
     return {
       user: [],
@@ -114,6 +131,23 @@ export default {
     confirmSure() {
       this.curFind.state++;
       this.confirmShow = false;
+    },
+    showPicker () {
+      this.lostPropertyPicker.show();
+    },
+    selectHandle(selectedVal, selectedIndex, selectedText) {
+      this.$createDialog({
+        type: 'warn',
+        content: `Selected Item: <br/> - value: ${selectedVal.join(', ')} <br/> - index: ${selectedIndex.join(', ')} <br/> - text: ${selectedText.join(' ')}`,
+        icon: 'cubeic-alert'
+      }).show();
+    },
+    cancelHandle() {
+      this.$createToast({
+        type: 'correct',
+        txt: 'Picker canceled',
+        time: 1000
+      }).show();
     }
   },
   computed: {
@@ -126,9 +160,9 @@ export default {
     },
     getRepairText() {
       if (this.user.userRepair && this.user.userRepair.length !== 0) {
-        return '您的“后勤保修”相关信息如下';
+        return '您的“后勤报修”相关信息如下';
       } else {
-        return '您还未有“后勤保修”的相关信息哦';
+        return '您还未有“后勤报修”的相关信息哦';
       }
     }
   },

@@ -5,10 +5,13 @@ import App from './App';
 import router from './router';
 import Axios from 'axios';
 import {formatDate} from './common/js/date';
+import Cube from 'cube-ui';
 
 import './common/stylus/index.styl';
 
 Vue.config.productionTip = false;
+
+Vue.use(Cube);
 
 Vue.prototype.$axios = Axios;
 Vue.filter('formatDate', (time) => {
