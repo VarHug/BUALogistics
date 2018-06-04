@@ -9,4 +9,4 @@ var RepairSchema = new Schema({
   'state': Number
 });
 
-module.exports = mongoose.model('Repair', RepairSchema, 'repair');
+module.exports = mongoose.model('Repair', RepairSchema, 'repairs');

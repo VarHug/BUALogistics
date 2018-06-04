@@ -22,4 +22,4 @@ var InfoSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('Info', InfoSchema, 'info');
+module.exports = mongoose.model('Info', InfoSchema, 'infos');
