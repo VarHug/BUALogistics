@@ -97,7 +97,7 @@ export default {
     _initScroll() {
       if (!this.scroll) {
         this.scroll = new BScroll(this.$refs.mine, {
-
+          click: true
         });
       } else {
         this.scroll.refresh();
