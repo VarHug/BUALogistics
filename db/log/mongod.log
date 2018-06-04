@@ -106,3 +106,304 @@
 2018-06-04T17:38:17.501+0800 I NETWORK  [conn39] received client metadata from 127.0.0.1:10507 conn39: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
 2018-06-04T17:38:20.616+0800 I NETWORK  [conn40] received client metadata from 127.0.0.1:10508 conn40: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
 2018-06-04T17:38:20.637+0800 I NETWORK  [conn41] received client metadata from 127.0.0.1:10509 conn41: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:31:58.661+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-06-04T18:31:58.719+0800 I CONTROL  [initandlisten] MongoDB starting : pid=14420 port=27017 dbpath=data 64-bit host=DESKTOP-GII1QBD
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] db version v3.6.4
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] git version: d0181a711f7e7f39e60b5aeb1dc7097bf6ae5856
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2l  25 May 2017
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] modules: none
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] build environment:
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-06-04T18:31:58.720+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 27017 }, storage: { dbPath: "data" }, systemLog: { destination: "file", logAppend: true, path: "log/mongod.log", quiet: true } }
+2018-06-04T18:31:58.720+0800 W -        [initandlisten] Detected unclean shutdown - data\mongod.lock is not empty.
+2018-06-04T18:31:58.721+0800 I -        [initandlisten] Detected data files in data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-06-04T18:31:58.721+0800 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2018-06-04T18:31:58.721+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7645M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),cache_cursors=false,log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-06-04T18:31:59.068+0800 I STORAGE  [initandlisten] WiredTiger message [1528108319:67798][14420:140705312879360], txn-recover: Main recovery loop: starting at 1/62464
+2018-06-04T18:31:59.068+0800 I STORAGE  [initandlisten] WiredTiger message [1528108319:68300][14420:140705312879360], txn-recover: Recovering log 1 through 2
+2018-06-04T18:31:59.160+0800 I STORAGE  [initandlisten] WiredTiger message [1528108319:160545][14420:140705312879360], txn-recover: Recovering log 2 through 2
+2018-06-04T18:31:59.458+0800 I STORAGE  [initandlisten] WiredTiger message [1528108319:458339][14420:140705312879360], txn-recover: Set global recovery timestamp: 0
+2018-06-04T18:31:59.911+0800 I CONTROL  [initandlisten] 
+2018-06-04T18:31:59.911+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-06-04T18:31:59.911+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-06-04T18:31:59.911+0800 I CONTROL  [initandlisten] 
+2018-06-04T18:31:59.911+0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2018-06-04T18:31:59.911+0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2018-06-04T18:31:59.912+0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2018-06-04T18:31:59.912+0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2018-06-04T18:31:59.912+0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2018-06-04T18:31:59.912+0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2018-06-04T18:31:59.912+0800 I CONTROL  [initandlisten] 
+2018-06-04T18:31:59.912+0800 I CONTROL  [initandlisten] 
+2018-06-04T18:31:59.912+0800 I CONTROL  [initandlisten] ** WARNING: The file system cache of this machine is configured to be greater than 40% of the total memory. This can lead to increased memory pressure and poor performance.
+2018-06-04T18:31:59.913+0800 I CONTROL  [initandlisten] See http://dochub.mongodb.org/core/wt-windows-system-file-cache
+2018-06-04T18:31:59.913+0800 I CONTROL  [initandlisten] 
+2018-06-04T18:32:00.076+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'data/diagnostic.data'
+2018-06-04T18:32:00.077+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-06-04T18:32:01.040+0800 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2018-06-04T18:32:14.514+0800 I NETWORK  [conn1] received client metadata from 127.0.0.1:12739 conn1: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:32:14.536+0800 I NETWORK  [conn2] received client metadata from 127.0.0.1:12740 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:32:18.867+0800 I NETWORK  [conn3] received client metadata from 127.0.0.1:12741 conn3: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:32:18.888+0800 I NETWORK  [conn4] received client metadata from 127.0.0.1:12742 conn4: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:32:54.627+0800 I NETWORK  [conn5] received client metadata from 127.0.0.1:12754 conn5: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:32:54.649+0800 I NETWORK  [conn6] received client metadata from 127.0.0.1:12755 conn6: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:37:28.763+0800 I NETWORK  [conn7] received client metadata from 127.0.0.1:12827 conn7: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:37:28.784+0800 I NETWORK  [conn8] received client metadata from 127.0.0.1:12828 conn8: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T18:45:33.742+0800 I NETWORK  [conn9] received client metadata from 127.0.0.1:13118 conn9: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T18:51:49.524+0800 I NETWORK  [conn9] end connection 127.0.0.1:13118 (8 connections now open)
+2018-06-04T18:52:15.748+0800 I NETWORK  [conn10] received client metadata from 127.0.0.1:13681 conn10: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T18:54:27.682+0800 I NETWORK  [conn10] end connection 127.0.0.1:13681 (8 connections now open)
+2018-06-04T18:54:31.527+0800 I NETWORK  [conn11] received client metadata from 127.0.0.1:13883 conn11: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T18:56:36.160+0800 I NETWORK  [conn11] end connection 127.0.0.1:13883 (8 connections now open)
+2018-06-04T18:56:38.834+0800 I NETWORK  [conn12] received client metadata from 127.0.0.1:14096 conn12: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T18:58:01.693+0800 I NETWORK  [conn12] end connection 127.0.0.1:14096 (8 connections now open)
+2018-06-04T18:58:12.001+0800 I NETWORK  [conn13] received client metadata from 127.0.0.1:14232 conn13: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T19:05:31.255+0800 I NETWORK  [conn7] end connection 127.0.0.1:12827 (8 connections now open)
+2018-06-04T19:05:31.255+0800 I NETWORK  [conn8] end connection 127.0.0.1:12828 (7 connections now open)
+2018-06-04T19:05:32.055+0800 I NETWORK  [conn5] end connection 127.0.0.1:12754 (6 connections now open)
+2018-06-04T19:05:32.056+0800 I NETWORK  [conn6] end connection 127.0.0.1:12755 (5 connections now open)
+2018-06-04T19:05:33.414+0800 I NETWORK  [conn3] end connection 127.0.0.1:12741 (4 connections now open)
+2018-06-04T19:05:33.415+0800 I NETWORK  [conn4] end connection 127.0.0.1:12742 (3 connections now open)
+2018-06-04T19:05:38.178+0800 I NETWORK  [conn14] received client metadata from 127.0.0.1:14975 conn14: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:05:38.202+0800 I NETWORK  [conn15] received client metadata from 127.0.0.1:14976 conn15: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:07:22.952+0800 I NETWORK  [conn13] end connection 127.0.0.1:14232 (4 connections now open)
+2018-06-04T19:07:33.726+0800 I NETWORK  [conn16] received client metadata from 127.0.0.1:1166 conn16: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T19:07:56.122+0800 I NETWORK  [conn17] received client metadata from 127.0.0.1:1197 conn17: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:07:56.145+0800 I NETWORK  [conn18] received client metadata from 127.0.0.1:1198 conn18: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:09:10.990+0800 I NETWORK  [conn19] Error receiving request from client: ProtocolError: Client sent an HTTP request over a native MongoDB connection. Ending connection from 127.0.0.1:1425 (connection id: 19)
+2018-06-04T19:09:10.990+0800 I NETWORK  [conn19] end connection 127.0.0.1:1425 (7 connections now open)
+2018-06-04T19:09:11.033+0800 I NETWORK  [conn20] Error receiving request from client: ProtocolError: Client sent an HTTP request over a native MongoDB connection. Ending connection from 127.0.0.1:1429 (connection id: 20)
+2018-06-04T19:09:11.033+0800 I NETWORK  [conn20] end connection 127.0.0.1:1429 (7 connections now open)
+2018-06-04T19:09:35.860+0800 I NETWORK  [conn16] end connection 127.0.0.1:1166 (6 connections now open)
+2018-06-04T19:28:33.634+0800 I NETWORK  [conn21] received client metadata from 127.0.0.1:3104 conn21: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T19:28:40.639+0800 I NETWORK  [conn21] end connection 127.0.0.1:3104 (6 connections now open)
+2018-06-04T19:29:32.220+0800 I NETWORK  [conn22] received client metadata from 127.0.0.1:3194 conn22: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:29:32.240+0800 I NETWORK  [conn23] received client metadata from 127.0.0.1:3195 conn23: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:29:33.893+0800 I NETWORK  [conn22] end connection 127.0.0.1:3194 (7 connections now open)
+2018-06-04T19:29:33.893+0800 I NETWORK  [conn23] end connection 127.0.0.1:3195 (6 connections now open)
+2018-06-04T19:29:34.609+0800 I NETWORK  [conn17] end connection 127.0.0.1:1197 (5 connections now open)
+2018-06-04T19:29:34.609+0800 I NETWORK  [conn18] end connection 127.0.0.1:1198 (4 connections now open)
+2018-06-04T19:29:35.354+0800 I NETWORK  [conn14] end connection 127.0.0.1:14975 (3 connections now open)
+2018-06-04T19:29:35.354+0800 I NETWORK  [conn15] end connection 127.0.0.1:14976 (2 connections now open)
+2018-06-04T19:29:54.304+0800 I NETWORK  [conn24] received client metadata from 127.0.0.1:3226 conn24: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:29:54.326+0800 I NETWORK  [conn25] received client metadata from 127.0.0.1:3227 conn25: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:31:04.331+0800 I NETWORK  [conn26] received client metadata from 127.0.0.1:3504 conn26: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T19:31:05.380+0800 I STORAGE  [conn27] createCollection: bua_data.infos with generated UUID: 844de75a-b2c6-4037-88b9-c6b352bb7f5c
+2018-06-04T19:31:05.724+0800 I COMMAND  [conn27] command bua_data.infos command: insert { insert: "infos", ordered: true, lsid: { id: UUID("fe274122-1c0c-4b20-b349-d7282c1f8d96") }, $db: "bua_data" } ninserted:1 keysInserted:1 numYields:0 reslen:44 locks:{ Global: { acquireCount: { r: 5, w: 3 } }, Database: { acquireCount: { r: 1, w: 2, W: 1 } }, Collection: { acquireCount: { r: 1, w: 2 } } } protocol:op_query 344ms
+2018-06-04T19:31:14.711+0800 I NETWORK  [conn28] received client metadata from 127.0.0.1:3548 conn28: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:31:14.733+0800 I NETWORK  [conn29] received client metadata from 127.0.0.1:3549 conn29: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:31:16.337+0800 I NETWORK  [conn24] end connection 127.0.0.1:3226 (7 connections now open)
+2018-06-04T19:31:16.338+0800 I NETWORK  [conn25] end connection 127.0.0.1:3227 (6 connections now open)
+2018-06-04T19:32:04.131+0800 I NETWORK  [conn30] received client metadata from 127.0.0.1:3619 conn30: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:32:04.153+0800 I NETWORK  [conn31] received client metadata from 127.0.0.1:3620 conn31: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:32:05.804+0800 I NETWORK  [conn28] end connection 127.0.0.1:3548 (7 connections now open)
+2018-06-04T19:32:05.804+0800 I NETWORK  [conn29] end connection 127.0.0.1:3549 (6 connections now open)
+2018-06-04T19:32:30.171+0800 I NETWORK  [conn30] end connection 127.0.0.1:3619 (5 connections now open)
+2018-06-04T19:32:30.172+0800 I NETWORK  [conn31] end connection 127.0.0.1:3620 (4 connections now open)
+2018-06-04T19:32:31.090+0800 I NETWORK  [conn2] end connection 127.0.0.1:12740 (3 connections now open)
+2018-06-04T19:32:31.090+0800 I NETWORK  [conn1] end connection 127.0.0.1:12739 (2 connections now open)
+2018-06-04T19:32:53.584+0800 I NETWORK  [conn26] end connection 127.0.0.1:3504 (1 connection now open)
+2018-06-04T19:32:53.584+0800 I NETWORK  [conn27] end connection 127.0.0.1:3508 (0 connections now open)
+2018-06-04T19:36:05.716+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] MongoDB starting : pid=9260 port=27017 dbpath=data 64-bit host=DESKTOP-GII1QBD
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] db version v3.6.4
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] git version: d0181a711f7e7f39e60b5aeb1dc7097bf6ae5856
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2l  25 May 2017
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] modules: none
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] build environment:
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-06-04T19:36:05.775+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 27017 }, storage: { dbPath: "data" }, systemLog: { destination: "file", logAppend: true, path: "log/mongod.log", quiet: true } }
+2018-06-04T19:36:05.776+0800 W -        [initandlisten] Detected unclean shutdown - data\mongod.lock is not empty.
+2018-06-04T19:36:05.777+0800 I -        [initandlisten] Detected data files in data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-06-04T19:36:05.777+0800 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2018-06-04T19:36:05.777+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7645M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),cache_cursors=false,log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-06-04T19:36:06.079+0800 I STORAGE  [initandlisten] WiredTiger message [1528112166:79566][9260:140705312879360], txn-recover: Main recovery loop: starting at 2/16896
+2018-06-04T19:36:06.080+0800 I STORAGE  [initandlisten] WiredTiger message [1528112166:80067][9260:140705312879360], txn-recover: Recovering log 2 through 3
+2018-06-04T19:36:06.174+0800 I STORAGE  [initandlisten] WiredTiger message [1528112166:174318][9260:140705312879360], txn-recover: Recovering log 3 through 3
+2018-06-04T19:36:06.551+0800 I STORAGE  [initandlisten] WiredTiger message [1528112166:551322][9260:140705312879360], txn-recover: Set global recovery timestamp: 0
+2018-06-04T19:36:07.016+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:36:07.016+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-06-04T19:36:07.017+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-06-04T19:36:07.017+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:36:07.017+0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2018-06-04T19:36:07.018+0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2018-06-04T19:36:07.018+0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2018-06-04T19:36:07.018+0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2018-06-04T19:36:07.019+0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2018-06-04T19:36:07.019+0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2018-06-04T19:36:07.019+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:36:07.019+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:36:07.020+0800 I CONTROL  [initandlisten] ** WARNING: The file system cache of this machine is configured to be greater than 40% of the total memory. This can lead to increased memory pressure and poor performance.
+2018-06-04T19:36:07.020+0800 I CONTROL  [initandlisten] See http://dochub.mongodb.org/core/wt-windows-system-file-cache
+2018-06-04T19:36:07.020+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:36:07.190+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'data/diagnostic.data'
+2018-06-04T19:36:07.190+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-06-04T19:36:08.036+0800 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2018-06-04T19:36:15.649+0800 I NETWORK  [conn1] received client metadata from 127.0.0.1:4193 conn1: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:15.670+0800 I NETWORK  [conn2] received client metadata from 127.0.0.1:4194 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:21.041+0800 I NETWORK  [conn3] received client metadata from 127.0.0.1:4203 conn3: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:21.061+0800 I NETWORK  [conn4] received client metadata from 127.0.0.1:4204 conn4: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:21.993+0800 I NETWORK  [conn5] received client metadata from 127.0.0.1:4205 conn5: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:22.017+0800 I NETWORK  [conn6] received client metadata from 127.0.0.1:4206 conn6: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:34.664+0800 I STORAGE  [conn1] Finishing collection drop for bua_data.infos (844de75a-b2c6-4037-88b9-c6b352bb7f5c).
+2018-06-04T19:36:35.615+0800 I NETWORK  [conn7] received client metadata from 127.0.0.1:4232 conn7: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:35.635+0800 I NETWORK  [conn8] received client metadata from 127.0.0.1:4233 conn8: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:37.234+0800 I NETWORK  [conn9] received client metadata from 127.0.0.1:4236 conn9: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:37.259+0800 I NETWORK  [conn10] received client metadata from 127.0.0.1:4237 conn10: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:38.574+0800 I NETWORK  [conn11] received client metadata from 127.0.0.1:4240 conn11: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:36:38.597+0800 I NETWORK  [conn12] received client metadata from 127.0.0.1:4241 conn12: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:39:14.831+0800 I NETWORK  [conn11] end connection 127.0.0.1:4240 (11 connections now open)
+2018-06-04T19:39:14.832+0800 I NETWORK  [conn12] end connection 127.0.0.1:4241 (10 connections now open)
+2018-06-04T19:39:15.656+0800 I NETWORK  [conn9] end connection 127.0.0.1:4236 (9 connections now open)
+2018-06-04T19:39:15.657+0800 I NETWORK  [conn10] end connection 127.0.0.1:4237 (8 connections now open)
+2018-06-04T19:39:16.679+0800 I NETWORK  [conn7] end connection 127.0.0.1:4232 (7 connections now open)
+2018-06-04T19:39:16.680+0800 I NETWORK  [conn8] end connection 127.0.0.1:4233 (6 connections now open)
+2018-06-04T19:39:18.469+0800 I NETWORK  [conn5] end connection 127.0.0.1:4205 (5 connections now open)
+2018-06-04T19:39:18.469+0800 I NETWORK  [conn6] end connection 127.0.0.1:4206 (4 connections now open)
+2018-06-04T19:39:19.223+0800 I NETWORK  [conn3] end connection 127.0.0.1:4203 (3 connections now open)
+2018-06-04T19:39:19.224+0800 I NETWORK  [conn4] end connection 127.0.0.1:4204 (2 connections now open)
+2018-06-04T19:39:20.458+0800 I NETWORK  [conn13] received client metadata from 127.0.0.1:4511 conn13: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:39:20.481+0800 I NETWORK  [conn14] received client metadata from 127.0.0.1:4512 conn14: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:41:22.296+0800 I NETWORK  [conn15] received client metadata from 127.0.0.1:4690 conn15: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T19:41:32.777+0800 I NETWORK  [conn15] end connection 127.0.0.1:4690 (4 connections now open)
+2018-06-04T19:41:38.231+0800 I NETWORK  [conn16] received client metadata from 127.0.0.1:4718 conn16: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T19:41:46.367+0800 I NETWORK  [conn16] end connection 127.0.0.1:4718 (4 connections now open)
+2018-06-04T19:46:53.869+0800 I NETWORK  [conn17] received client metadata from 127.0.0.1:5397 conn17: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T19:46:54.035+0800 I NETWORK  [conn17] end connection 127.0.0.1:5397 (4 connections now open)
+2018-06-04T19:51:51.457+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-06-04T19:51:51.513+0800 I CONTROL  [initandlisten] MongoDB starting : pid=5232 port=27017 dbpath=data 64-bit host=DESKTOP-GII1QBD
+2018-06-04T19:51:51.513+0800 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten] db version v3.6.4
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten] git version: d0181a711f7e7f39e60b5aeb1dc7097bf6ae5856
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2l  25 May 2017
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten] modules: none
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten] build environment:
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-06-04T19:51:51.514+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 27017 }, storage: { dbPath: "data" }, systemLog: { destination: "file", logAppend: true, path: "log/mongod.log", quiet: true } }
+2018-06-04T19:51:51.514+0800 W -        [initandlisten] Detected unclean shutdown - data\mongod.lock is not empty.
+2018-06-04T19:51:51.515+0800 I -        [initandlisten] Detected data files in data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-06-04T19:51:51.515+0800 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2018-06-04T19:51:51.515+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7645M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),cache_cursors=false,log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-06-04T19:51:51.828+0800 I STORAGE  [initandlisten] WiredTiger message [1528113111:828612][5232:140705312879360], txn-recover: Main recovery loop: starting at 3/4480
+2018-06-04T19:51:51.829+0800 I STORAGE  [initandlisten] WiredTiger message [1528113111:829113][5232:140705312879360], txn-recover: Recovering log 3 through 4
+2018-06-04T19:51:51.919+0800 I STORAGE  [initandlisten] WiredTiger message [1528113111:919353][5232:140705312879360], txn-recover: Recovering log 4 through 4
+2018-06-04T19:51:52.338+0800 I STORAGE  [initandlisten] WiredTiger message [1528113112:338470][5232:140705312879360], txn-recover: Set global recovery timestamp: 0
+2018-06-04T19:51:52.906+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:51:52.906+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-06-04T19:51:52.906+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-06-04T19:51:52.906+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:51:52.906+0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2018-06-04T19:51:52.906+0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] ** WARNING: The file system cache of this machine is configured to be greater than 40% of the total memory. This can lead to increased memory pressure and poor performance.
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] See http://dochub.mongodb.org/core/wt-windows-system-file-cache
+2018-06-04T19:51:52.907+0800 I CONTROL  [initandlisten] 
+2018-06-04T19:51:53.052+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'data/diagnostic.data'
+2018-06-04T19:51:53.053+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-06-04T19:51:54.024+0800 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2018-06-04T19:51:59.085+0800 I NETWORK  [conn1] received client metadata from 127.0.0.1:5968 conn1: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:52:01.436+0800 I NETWORK  [conn2] received client metadata from 127.0.0.1:5969 conn2: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:52:01.465+0800 I NETWORK  [conn3] received client metadata from 127.0.0.1:5970 conn3: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:52:24.897+0800 I NETWORK  [conn4] received client metadata from 127.0.0.1:5972 conn4: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:52:24.925+0800 I NETWORK  [conn5] received client metadata from 127.0.0.1:5973 conn5: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T19:53:15.683+0800 I NETWORK  [conn6] received client metadata from 127.0.0.1:5978 conn6: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:10:13.484+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] MongoDB starting : pid=544 port=27017 dbpath=data 64-bit host=DESKTOP-GII1QBD
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] db version v3.6.4
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] git version: d0181a711f7e7f39e60b5aeb1dc7097bf6ae5856
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2l  25 May 2017
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] modules: none
+2018-06-04T20:10:13.543+0800 I CONTROL  [initandlisten] build environment:
+2018-06-04T20:10:13.544+0800 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2018-06-04T20:10:13.544+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2018-06-04T20:10:13.544+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-06-04T20:10:13.544+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 27017 }, storage: { dbPath: "data" }, systemLog: { destination: "file", logAppend: true, path: "log/mongod.log", quiet: true } }
+2018-06-04T20:10:13.544+0800 W -        [initandlisten] Detected unclean shutdown - data\mongod.lock is not empty.
+2018-06-04T20:10:13.545+0800 I -        [initandlisten] Detected data files in data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-06-04T20:10:13.545+0800 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2018-06-04T20:10:13.545+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7645M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),cache_cursors=false,log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-06-04T20:10:13.958+0800 I STORAGE  [initandlisten] WiredTiger message [1528114213:957952][544:140705312879360], txn-recover: Main recovery loop: starting at 4/3072
+2018-06-04T20:10:13.958+0800 I STORAGE  [initandlisten] WiredTiger message [1528114213:958453][544:140705312879360], txn-recover: Recovering log 4 through 5
+2018-06-04T20:10:14.069+0800 I STORAGE  [initandlisten] WiredTiger message [1528114214:69248][544:140705312879360], txn-recover: Recovering log 5 through 5
+2018-06-04T20:10:14.494+0800 I STORAGE  [initandlisten] WiredTiger message [1528114214:494378][544:140705312879360], txn-recover: Set global recovery timestamp: 0
+2018-06-04T20:10:15.420+0800 I CONTROL  [initandlisten] 
+2018-06-04T20:10:15.420+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2018-06-04T20:10:15.420+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2018-06-04T20:10:15.420+0800 I CONTROL  [initandlisten] 
+2018-06-04T20:10:15.420+0800 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] 
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] 
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] ** WARNING: The file system cache of this machine is configured to be greater than 40% of the total memory. This can lead to increased memory pressure and poor performance.
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] See http://dochub.mongodb.org/core/wt-windows-system-file-cache
+2018-06-04T20:10:15.421+0800 I CONTROL  [initandlisten] 
+2018-06-04T20:10:15.584+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'data/diagnostic.data'
+2018-06-04T20:10:15.584+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-06-04T20:10:16.003+0800 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2018-06-04T20:10:18.460+0800 I NETWORK  [conn1] received client metadata from 127.0.0.1:6711 conn1: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:10:25.129+0800 I NETWORK  [conn2] received client metadata from 127.0.0.1:6724 conn2: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:10:25.150+0800 I NETWORK  [conn3] received client metadata from 127.0.0.1:6725 conn3: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:10:29.492+0800 I NETWORK  [conn4] received client metadata from 127.0.0.1:6726 conn4: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:10:29.520+0800 I NETWORK  [conn5] received client metadata from 127.0.0.1:6727 conn5: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:10:30.749+0800 I NETWORK  [conn6] received client metadata from 127.0.0.1:6728 conn6: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:10:30.771+0800 I NETWORK  [conn7] received client metadata from 127.0.0.1:6729 conn7: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:11:18.459+0800 I NETWORK  [conn8] received client metadata from 127.0.0.1:6734 conn8: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:14:40.342+0800 I NETWORK  [conn9] Error receiving request from client: ProtocolError: Client sent an HTTP request over a native MongoDB connection. Ending connection from 127.0.0.1:7249 (connection id: 9)
+2018-06-04T20:14:40.342+0800 I NETWORK  [conn9] end connection 127.0.0.1:7249 (8 connections now open)
+2018-06-04T20:14:40.420+0800 I NETWORK  [conn10] Error receiving request from client: ProtocolError: Client sent an HTTP request over a native MongoDB connection. Ending connection from 127.0.0.1:7252 (connection id: 10)
+2018-06-04T20:14:40.420+0800 I NETWORK  [conn10] end connection 127.0.0.1:7252 (8 connections now open)
+2018-06-04T20:16:09.471+0800 I NETWORK  [conn1] end connection 127.0.0.1:6711 (7 connections now open)
+2018-06-04T20:16:09.471+0800 I NETWORK  [conn8] end connection 127.0.0.1:6734 (6 connections now open)
+2018-06-04T20:16:14.228+0800 I NETWORK  [conn11] received client metadata from 127.0.0.1:7279 conn11: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:16:14.260+0800 I NETWORK  [conn12] received client metadata from 127.0.0.1:7280 conn12: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:16:28.894+0800 I NETWORK  [conn13] received client metadata from 127.0.0.1:7285 conn13: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:16:54.666+0800 I NETWORK  [conn13] end connection 127.0.0.1:7285 (8 connections now open)
+2018-06-04T20:17:02.351+0800 I NETWORK  [conn14] received client metadata from 127.0.0.1:7326 conn14: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:19:02.556+0800 I NETWORK  [conn14] end connection 127.0.0.1:7326 (8 connections now open)
+2018-06-04T20:20:22.023+0800 I NETWORK  [conn15] received client metadata from 127.0.0.1:7728 conn15: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:20:22.044+0800 I NETWORK  [conn16] received client metadata from 127.0.0.1:7729 conn16: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:25:29.957+0800 I NETWORK  [conn17] received client metadata from 127.0.0.1:7804 conn17: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:25:29.963+0800 I NETWORK  [conn18] received client metadata from 127.0.0.1:7805 conn18: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:31:42.653+0800 I NETWORK  [conn17] end connection 127.0.0.1:7804 (11 connections now open)
+2018-06-04T20:31:42.653+0800 I NETWORK  [conn18] end connection 127.0.0.1:7805 (10 connections now open)
+2018-06-04T20:31:45.429+0800 I NETWORK  [conn19] received client metadata from 127.0.0.1:8478 conn19: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:31:45.430+0800 I NETWORK  [conn20] received client metadata from 127.0.0.1:8479 conn20: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:33:29.906+0800 I NETWORK  [conn20] end connection 127.0.0.1:8479 (10 connections now open)
+2018-06-04T20:33:29.906+0800 I NETWORK  [conn19] end connection 127.0.0.1:8478 (11 connections now open)
+2018-06-04T20:33:42.506+0800 I NETWORK  [conn11] end connection 127.0.0.1:7279 (9 connections now open)
+2018-06-04T20:33:42.507+0800 I NETWORK  [conn12] end connection 127.0.0.1:7280 (8 connections now open)
+2018-06-04T20:33:42.859+0800 I NETWORK  [conn15] end connection 127.0.0.1:7728 (7 connections now open)
+2018-06-04T20:33:42.860+0800 I NETWORK  [conn16] end connection 127.0.0.1:7729 (6 connections now open)
+2018-06-04T20:33:43.551+0800 I NETWORK  [conn6] end connection 127.0.0.1:6728 (5 connections now open)
+2018-06-04T20:33:43.552+0800 I NETWORK  [conn7] end connection 127.0.0.1:6729 (4 connections now open)
+2018-06-04T20:33:44.243+0800 I NETWORK  [conn4] end connection 127.0.0.1:6726 (3 connections now open)
+2018-06-04T20:33:44.244+0800 I NETWORK  [conn5] end connection 127.0.0.1:6727 (2 connections now open)
+2018-06-04T20:33:46.193+0800 I NETWORK  [conn21] received client metadata from 127.0.0.1:8489 conn21: { application: { name: "robo3t" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:33:46.214+0800 I NETWORK  [conn22] received client metadata from 127.0.0.1:8490 conn22: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.4.3-10-g865d2fb" }, os: { type: "Windows", name: "Microsoft Windows 8", architecture: "x86_64", version: "6.2 (build 9200)" } }
+2018-06-04T20:38:58.617+0800 I NETWORK  [conn23] received client metadata from 127.0.0.1:9064 conn23: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:38:58.618+0800 I NETWORK  [conn24] received client metadata from 127.0.0.1:9065 conn24: { driver: { name: "nodejs", version: "3.0.8" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.15063" }, platform: "Node.js v8.11.1, LE, mongodb-core: 3.0.8" }
+2018-06-04T20:41:11.081+0800 I NETWORK  [conn24] end connection 127.0.0.1:9065 (6 connections now open)
+2018-06-04T20:41:11.081+0800 I NETWORK  [conn23] end connection 127.0.0.1:9064 (5 connections now open)
+2018-06-04T20:41:11.081+0800 I NETWORK  [conn25] end connection 127.0.0.1:9103 (4 connections now open)
