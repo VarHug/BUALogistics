@@ -20,15 +20,8 @@
             <p class="find-desc">{{find.desc}}</p>
           </li>
         </ul>
-        <div class="publish">
-          <div class="publish-box">
-            <img width="125" height="111" src="./role-3.png">
-            <span class="publish-title">丢了东西，点我寻找</span>
-          </div>
-          <div class="publish-box">
-            <img width="125" height="111" src="./role-4.png">
-            <span class="publish-title">捡到东西，点我归还</span>
-          </div>
+        <div class="publish" @click="releaseFindShow">
+          <i class="icon-add_circle"></i>
         </div>
       </div>
       <split></split>
@@ -41,39 +34,28 @@
           </li>
         </ul>
       </div>
-      <cube-button @click="showPicker">失物招领</cube-button>
+      <!-- <cube-button @click="showPicker">失物招领</cube-button> -->
       <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     </div>
+    <release-find ref="releaseFind"></release-find>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import split from '../split/split';
 import confirm from '../confirm/confirm';
+import releaseFind from '../release-find/releaseFind';
 import BScroll from 'better-scroll';
-import {stateList, typeList, objectList} from '../../common/js/lostProperty.js';
 
 const ERR_OK = 0;
 const STATE_LOSE = 0; // 寻找中
 const STATE_FIND = 1; // 已找回
 const STATE_DRAW = 2; // 招领中
 const STATE_BACK = 3; // 已归还
-const lostPropertyData = stateList;
-lostPropertyData.forEach((state) => {
-  state.children = typeList;
-  state.children.forEach((type) => {
-    type.children = objectList[type.value];
-  });
-});
 
 export default {
   mounted() {
-    this.lostPropertyPicker = this.$createCascadePicker({
-      title: '失物招领',
-      data: lostPropertyData,
-      onSelect: this.selectHandle,
-      onCancel: this.cancelHandle
-    });
+
   },
   data() {
     return {
@@ -132,22 +114,8 @@ export default {
       this.curFind.state++;
       this.confirmShow = false;
     },
-    showPicker () {
-      this.lostPropertyPicker.show();
-    },
-    selectHandle(selectedVal, selectedIndex, selectedText) {
-      this.$createDialog({
-        type: 'warn',
-        content: `Selected Item: <br/> - value: ${selectedVal.join(', ')} <br/> - index: ${selectedIndex.join(', ')} <br/> - text: ${selectedText.join(' ')}`,
-        icon: 'cubeic-alert'
-      }).show();
-    },
-    cancelHandle() {
-      this.$createToast({
-        type: 'correct',
-        txt: 'Picker canceled',
-        time: 1000
-      }).show();
+    releaseFindShow() {
+      this.$refs.releaseFind.show();
     }
   },
   computed: {
@@ -168,7 +136,8 @@ export default {
   },
   components: {
     split,
-    'v-confirm': confirm
+    'v-confirm': confirm,
+    releaseFind
   }
 };
 </script>
@@ -204,6 +173,7 @@ export default {
         line-height 12px
         font-size 10px
   .find-lose
+    position relative
     padding 18px
     .title
       margin-bottom 14px
@@ -235,22 +205,15 @@ export default {
         line-height 16px
         font-size 12px
     .publish
-      display flex
-      .publish-box
-        flex 1
-        text-align center
-        font-size 0
-        img
-          display inline-block
-          vertical-align middle
-        .publish-title
-          display inline-block
-          vertical-align middle
-          padding 5px
-          font-size 12px
-          color #ffffff
-          background-color #3abaf1
-          border-radius 5px
+      position absolute
+      top 10px
+      right 10px
+      padding 5px
+      width 25px
+      height 25px
+      .icon-add_circle
+        font-size 24px
+        color #00a0dc
   .repair-info
     padding 18px 18px 0
     .title
