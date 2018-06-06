@@ -8,6 +8,7 @@
       <div class="edit-user-import">
         <div class="select-object" @click="showPicker">
           <p class="txt" :class="{'dark': darkTxt}">{{selectedTxt}}</p>
+          <i class="cubeic-select icon"></i>
         </div>
       </div>
       <div class="edit_user_parsing">
@@ -145,8 +146,13 @@ export default {
       padding 10px 0
       border-bottom 1px solid #e6e6e6
     .select-object
+      position relative
       .txt
         padding 5px 0
+      .icon
+        position absolute
+        top 15px
+        right 20px
     .dark
       color #333
   .edit_user_parsing

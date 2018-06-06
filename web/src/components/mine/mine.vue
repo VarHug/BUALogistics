@@ -33,11 +33,15 @@
             <p class="reply-text">部门回复：{{repair.reply}}</p>
           </li>
         </ul>
+        <div class="publish" @click="pubRepairShow">
+          <i class="icon-add_circle"></i>
+        </div>
       </div>
       <!-- <cube-button @click="showPicker">失物招领</cube-button> -->
       <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     </div>
     <release-find :userName="user.userName" ref="releaseFind"></release-find>
+    <pub-repair :userName="user.userName" ref="pubRepair"></pub-repair>
   </div>
 </template>
 
@@ -46,6 +50,7 @@ import split from '../split/split';
 import confirm from '../confirm/confirm';
 import releaseFind from '../release-find/releaseFind';
 import BScroll from 'better-scroll';
+import pubRepair from '../pubrepair/pubrepair';
 
 const ERR_OK = 0;
 const STATE_LOSE = 0; // 寻找中
@@ -116,6 +121,9 @@ export default {
     },
     releaseFindShow() {
       this.$refs.releaseFind.show();
+    },
+    pubRepairShow() {
+      this.$refs.pubRepair.show();
     }
   },
   computed: {
@@ -137,7 +145,8 @@ export default {
   components: {
     split,
     'v-confirm': confirm,
-    releaseFind
+    releaseFind,
+    pubRepair
   }
 };
 </script>
@@ -204,17 +213,18 @@ export default {
         vertical-align top
         line-height 16px
         font-size 12px
-    .publish
-      position absolute
-      top 10px
-      right 10px
-      padding 5px
-      width 25px
-      height 25px
-      .icon-add_circle
-        font-size 24px
-        color #00a0dc
+  .publish
+    position absolute
+    top 10px
+    right 10px
+    padding 5px
+    width 25px
+    height 25px
+    .icon-add_circle
+      font-size 24px
+      color #00a0dc
   .repair-info
+    position relative
     padding 18px 18px 0
     .title
       margin-bottom 14px
@@ -232,4 +242,6 @@ export default {
         border-radius 5px
         &:nth-of-type(even)
           background-color #3abaf1
+      .consult-text
+        margin-bottom 5px
 </style>
