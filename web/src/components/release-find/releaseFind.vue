@@ -17,7 +17,7 @@
           <span class="clear-content" @click="clearMessage">清空内容</span>
         </div>
       </div>
-      <pub-btn></pub-btn>
+      <div class="pub-btn" @click="pubConfirm">确认</div>
     </div>
   </transition>
 </template>
@@ -35,6 +35,11 @@ lostPropertyData.forEach((state) => {
 });
 
 export default {
+  props: {
+    userName: {
+      type: String
+    }
+  },
   mounted() {
     this.lostPropertyPicker = this.$createCascadePicker({
       title: '失物招领',
@@ -61,6 +66,23 @@ export default {
     },
     clearMessage() {
       this.message = '';
+    },
+    pubConfirm() {
+      let find = this.selectedTxt.split('- ');
+      if (find.length === 3) {
+        let findObj = {};
+        if (find[0] === '丢了') {
+          findObj['state'] = 0;
+        } else {
+          findObj['state'] = 1;
+        }
+        findObj['name'] = this.userName;
+        findObj['good'] = find[2]; // good
+        findObj['time'] = new Date().getTime();
+        findObj['desc'] = this.message;
+        console.log(findObj);
+      }
+      this.showFlag = false;
     },
     showPicker () {
       this.lostPropertyPicker.show();
@@ -96,6 +118,7 @@ export default {
   left 0
   bottom 0
   width 100%
+  z-index 100
   background-color #fff
   transform translate3d(0, 0, 0)
   &.move-enter-active, &.move-leave-active
@@ -152,4 +175,14 @@ export default {
         bottom 5px
         font-size 14px
         color #3b95fa
+  .pub-btn
+    position absolute
+    bottom 0
+    width 100%
+    height 42px
+    line-height 42px
+    text-align center
+    font-size 15px
+    color #ffffff
+    background #3b95fa
 </style>

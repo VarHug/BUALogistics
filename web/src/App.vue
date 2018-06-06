@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <keep-alive>
-      <div class="router-wrapper">
-        <router-view></router-view>
-      </div>
+      <!-- <div class="router-wrapper"> -->
+      <router-view></router-view>
+      <!-- </div> -->
     </keep-alive>
     <bua-footer class="footer"></bua-footer>
   </div>
@@ -36,12 +36,12 @@ export default {
   position relative
   width 100%
   height 100%
-  .router-wrapper
-    position absolute
-    top 0
-    bottom 50px
-    width 100%
-    overflow hidden
+  // .router-wrapper
+  //   position absolute
+  //   top 0
+  //   bottom 50px
+  //   width 100%
+  //   overflow hidden
   .footer
     position fixed
     bottom 0

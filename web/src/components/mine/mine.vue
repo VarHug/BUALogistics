@@ -37,7 +37,7 @@
       <!-- <cube-button @click="showPicker">失物招领</cube-button> -->
       <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     </div>
-    <release-find ref="releaseFind"></release-find>
+    <release-find :userName="user.userName" ref="releaseFind"></release-find>
   </div>
 </template>
 
@@ -147,7 +147,7 @@ export default {
   position absolute
   top 0
   left 0
-  bottom 0
+  bottom 50px
   width 100%
   .user
     display flex

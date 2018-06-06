@@ -120,7 +120,7 @@ export default {
     .content-wrapper
       position absolute
       top 61px
-      bottom 0
+      bottom 50px
       width 100%
       overflow hidden
       background-color #f3f5f7
