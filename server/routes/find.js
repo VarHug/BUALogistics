@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var Info = require('../models/info');
+var Find = require('../models/find');
 var DB_URL = 'mongodb://localhost:27017/bua_data';
 
 var router = express.Router();
@@ -21,7 +21,7 @@ mongoose.connection.on('disconnected', function () {
 });
 
 router.get('/', function (req, res, next) {
-  Info.find({}, function (err, doc) {
+  Find.find({}, function (err, doc) {
     if (err) {
       res.json({
         status: 1,

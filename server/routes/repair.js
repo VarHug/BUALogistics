@@ -24,12 +24,12 @@ router.get('/', function (req, res, next) {
   Repairs.find({}, function (err, doc) {
     if (err) {
       res.json({
-        status: '1',
+        status: 1,
         msg: err.msg
       });
     } else {
       res.json({
-        status: '0',
+        status: 0,
         msg: '',
         result: {
           count: doc.length,

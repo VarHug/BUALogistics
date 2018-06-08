@@ -48,8 +48,8 @@ export default {
   },
   created() {
     this.$axios.get('/api/find').then(response => {
-      if (response.data.errno === ERR_OK) {
-        this.find = response.data.data;
+      if (response.data.status === ERR_OK) {
+        this.find = response.data.result.list;
         this.$nextTick(() => {
           this._initScroll();
         });
