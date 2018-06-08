@@ -38,8 +38,8 @@
         </div>
       </div>
       <!-- <cube-button @click="showPicker">失物招领</cube-button> -->
-      <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     </div>
+    <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     <release-find :userName="user.userName" ref="releaseFind"></release-find>
     <pub-repair :userName="user.userName" ref="pubRepair"></pub-repair>
   </div>
