@@ -18,6 +18,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+// import {eventHub} from '../../common/js/eventHub.js';
+
 export default {
   props: {
     userName: {
@@ -50,6 +52,12 @@ export default {
         repairObj['state'] = 0;
       }
       console.log(repairObj);
+      this.$axios.post('/api/repair', {
+        params: repairObj
+      }).then(response => {
+        console.log(response);
+        // eventHub.$emit('repairList_add');
+      });
       this.showFlag = false;
     }
   },

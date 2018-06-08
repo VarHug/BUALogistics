@@ -21,6 +21,7 @@
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll';
+// import {eventHub} from '../../common/js/eventHub.js';
 
 const ERR_OK = 0;
 
@@ -30,25 +31,33 @@ export default {
       repair: []
     };
   },
+  mounted() {
+
+  },
   created() {
-    this.$axios.get('/api/repair').then(response => {
-      if (response.data.status === ERR_OK) {
-        this.repair = response.data.result.list;
-        this.$nextTick(() => {
-          this._initScroll();
-        });
-      }
-    });
+    this._getRepairList();
+
+    // eventHub.$on('repairList_add', this._getRepairList);
   },
   methods: {
     _initScroll() {
-      if (!this.scroll) {
-        this.scroll = new BScroll(this.$refs.repair, {
+      if (!this.repairScroll) {
+        this.repairScroll = new BScroll(this.$refs.repair, {
 
         });
       } else {
-        this.scroll.refresh();
+        this.repairScroll.refresh();
       }
+    },
+    _getRepairList() {
+      this.$axios.get('/api/repair').then(response => {
+        if (response.data.status === ERR_OK) {
+          this.repair = response.data.result.list;
+          this.$nextTick(() => {
+            this._initScroll();
+          });
+        }
+      });
     }
   },
   components: {

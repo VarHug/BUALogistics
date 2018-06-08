@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <!-- <div class="router-wrapper"> -->
-      <router-view></router-view>
-      <!-- </div> -->
-    </keep-alive>
+    <!-- <div class="router-wrapper"> -->
+    <router-view></router-view>
+    <!-- </div> -->
     <bua-footer class="footer"></bua-footer>
   </div>
 </template>

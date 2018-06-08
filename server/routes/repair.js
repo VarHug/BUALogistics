@@ -40,4 +40,31 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.post('/', function (req, res) {
+  let repairParam = req.body.params;
+  let repair = new Repairs({
+    content: repairParam.content,
+    author: repairParam.author,
+    time: repairParam.time,
+    reply: '',
+    state: repairParam.state
+  });
+
+  repair.save((err, result) => {
+    if (err) {
+      console.log('Error:' + err);
+    } else {
+      console.log('Result:' + result);
+      res.send('OK');
+    }
+  });
+
+  // let repair = req.body.params;
+  // console.log(repair.author);
+  // console.log(repair.content);
+  // console.log(repair.time);
+  // console.log(repair.reply);
+  // console.log(repair.state);
+});
+
 module.exports = router;
