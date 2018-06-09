@@ -50,6 +50,7 @@ export default {
     this.$axios.get('/api/find').then(response => {
       if (response.data.status === ERR_OK) {
         this.find = response.data.result.list;
+        this.find.sort((a, b) => b.time - a.time);
         this.$nextTick(() => {
           this._initScroll();
         });

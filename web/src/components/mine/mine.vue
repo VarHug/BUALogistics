@@ -117,6 +117,13 @@ export default {
     },
     confirmSure() {
       this.curFind.state++;
+      console.log(this.curFind);
+      // this.$axios.post('/api/find', {
+
+      // });
+      // .then(response => {
+      //   console.log(response);
+      // });
       this.confirmShow = false;
     },
     releaseFindShow() {

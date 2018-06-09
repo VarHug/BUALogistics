@@ -53,6 +53,7 @@ export default {
       this.$axios.get('/api/repair').then(response => {
         if (response.data.status === ERR_OK) {
           this.repair = response.data.result.list;
+          this.repair.sort((a, b) => b.time - a.time);
           this.$nextTick(() => {
             this._initScroll();
           });

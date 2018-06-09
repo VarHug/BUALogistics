@@ -75,13 +75,19 @@ export default {
         if (find[0] === '丢了') {
           findObj['state'] = 0;
         } else {
-          findObj['state'] = 1;
+          findObj['state'] = 2;
         }
         findObj['name'] = this.userName;
         findObj['good'] = find[2]; // good
         findObj['time'] = new Date().getTime();
         findObj['desc'] = this.message;
+        findObj['type'] = 'insert';
         console.log(findObj);
+        this.$axios.post('/api/find', {
+          params: findObj
+        }).then(response => {
+          console.log(response);
+        });
       }
       this.showFlag = false;
     },

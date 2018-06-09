@@ -40,4 +40,30 @@ router.get('/', function (req, res, next) {
   });
 });
 
+router.post('/', function (req, res) {
+  let findParam = req.body.params;
+  console.log(findParam);
+  if (findParam.type === 'insert') {
+    let find = new Find({
+      name: findParam.name,
+      good: findParam.good,
+      desc: findParam.desc,
+      time: findParam.time,
+      state: findParam.state
+    });
+
+    find.save((err, result) => {
+      if (err) {
+        console.log('Error:' + err);
+      } else {
+        console.log('Result:' + result);
+        res.send('Insert OK');
+      }
+    });
+  } else {
+    console.log(update)
+  }
+
+});
+
 module.exports = router;
