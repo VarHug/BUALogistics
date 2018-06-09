@@ -8,6 +8,7 @@ var ejs = require('ejs');
 var infoRouter = require('./routes/info');
 var repairRouter = require('./routes/repair');
 var findRouter = require('./routes/find');
+var userRouter = require('./routes/users');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/info', infoRouter);
 app.use('/repair', repairRouter);
 app.use('/find', findRouter);
+app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -10,16 +10,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const portfinder = require('portfinder');
 
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
 // mock数据
-var appData = require('../data.json');
+// var appData = require('../data.json');
 // var info = appData.info;
 // var find = appData.find;
 // var repair = appData.repair;
-var user = appData.user;
-var apiRoutes = express.Router();
-app.use('/api', apiRoutes);
+// var user = appData.user;
+// var apiRoutes = express.Router();
+// app.use('/api', apiRoutes);
 
 const HOST = process.env.HOST;
 const PORT = process.env.PORT && Number(process.env.PORT);
@@ -73,12 +73,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       //     data: repair
       //   });
       // });
-      app.get('/api/user', (req, res) => {
-        res.json({
-          errno: 0,
-          data: user
-        });
-      });
+      // app.get('/api/user', (req, res) => {
+      //   res.json({
+      //     errno: 0,
+      //     data: user
+      //   });
+      // });
     }
   },
   plugins: [

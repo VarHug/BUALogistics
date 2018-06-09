@@ -22,8 +22,8 @@
 
 export default {
   props: {
-    userName: {
-      type: String
+    user: {
+      type: Object
     }
   },
   data() {
@@ -45,20 +45,34 @@ export default {
     pubConfirm() {
       let repairObj = {};
       if (this.message) {
-        repairObj['author'] = this.userName;
+        repairObj['author'] = this.user.userName;
         repairObj['content'] = this.message;
         repairObj['time'] = new Date().getTime();
         repairObj['replay'] = '';
         repairObj['state'] = 0;
+        repairObj['userId'] = this.user._id;
       }
       console.log(repairObj);
-      this.$axios.post('/api/repair', {
-        params: repairObj
-      }).then(response => {
-        console.log(response);
-        // eventHub.$emit('repairList_add');
-      });
+      // this.$axios.post('/api/repair', {
+      //   params: repairObj
+      // }).then(response => {
+      //   console.log(response);
+      // });
+      this.$emit('pubrepair', repairObj);
+
+      this.$axios.all([this._postRepair(repairObj), this._postUser(repairObj)]);
+
       this.showFlag = false;
+    },
+    _postRepair(obj) {
+      return this.$axios.post('/api/repair', {
+        params: obj
+      });
+    },
+    _postUser(obj) {
+      return this.$axios.post('/api/user', {
+        params: obj
+      });
     }
   },
   components: {

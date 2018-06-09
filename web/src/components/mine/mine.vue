@@ -6,9 +6,9 @@
           <img width="50" height="50" src="./gabe.jpg">
         </div>
         <div class="user-detail">
-          <span class="user-name">Gabe Newell</span>
-          <span class="user-type">学生</span>
-          <span class="user-id">19621103</span>
+          <span class="user-name">{{user.userName}}</span>
+          <span class="user-type">{{user.userType}}</span>
+          <span class="user-id">{{user.userId}}</span>
         </div>
       </div>
       <split></split>
@@ -41,7 +41,7 @@
     </div>
     <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     <release-find :userName="user.userName" ref="releaseFind"></release-find>
-    <pub-repair :userName="user.userName" ref="pubRepair"></pub-repair>
+    <pub-repair :user="user" ref="pubRepair" @pubrepair="updateUserRepair"></pub-repair>
   </div>
 </template>
 
@@ -64,7 +64,7 @@ export default {
   },
   data() {
     return {
-      user: [],
+      user: {},
       findConfirmTxt: '',
       confirmShow: false,
       curFind: {}
@@ -72,8 +72,9 @@ export default {
   },
   created() {
     this.$axios.get('/api/user').then(response => {
-      if (response.data.errno === ERR_OK) {
-        this.user = response.data.data;
+      if (response.data.status === ERR_OK) {
+        this.user = response.data.result.list[0];
+        console.log(this.user);
         this.$nextTick(() => {
           this._initScroll();
         });
@@ -131,6 +132,9 @@ export default {
     },
     pubRepairShow() {
       this.$refs.pubRepair.show();
+    },
+    updateUserRepair(obj) {
+      this.user.userRepair.unshift(obj);
     }
   },
   computed: {
