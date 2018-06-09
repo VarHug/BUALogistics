@@ -43,21 +43,58 @@ router.get('/', function (req, res, next) {
 router.post('/', function(req, res) {
   let param = req.body.params;
   let id = param.userId;
-  let updateStr = {$push:{userRepair:{
-    content: param.content,
-    author: param.author,
-    time: param.time,
-    reply: '',
-    state: param.state
-  }}};
-
-  User.findByIdAndUpdate(id, updateStr, (err, result) => {
-    if (err) {
-      console.log('Error:' + err);
-    } else {
-      console.log('Result:' + result);
+  if (param.type === 'repair') {
+    let updateStr = {$push:{userRepair:{
+      content: param.content,
+      author: param.author,
+      time: param.time,
+      reply: '',
+      state: param.state
+    }}};
+  
+    User.findByIdAndUpdate(id, updateStr, (err, result) => {
+      if (err) {
+        console.log('Error:' + err);
+      } else {
+        console.log('Result:' + result);
+      }
+    });
+  } else if (param.type === 'find') {
+    if (param.findtype === 'insert') {
+      let updateStr = {$push:{userFind:{
+        name: param.name,
+        good: param.good,
+        desc: param.desc,
+        time: param.time,
+        state: param.state
+      }}};
+  
+      User.findByIdAndUpdate(id, updateStr, (err, result) => {
+        if (err) {
+          console.log('Error:' + err);
+        } else {
+          console.log('Result:' + result);
+        }
+      });
+    } else if (param.findtype === 'update') {
+      let wherestr = {
+        'userId': param.userId,
+        'userFind.time': param.time
+      };
+      let updatestr = {
+        $set: {
+          'userFind.$.state': param.state
+        }
+      }
+      User.update(wherestr, updatestr, (err, result) => {
+        if (err) {
+          console.log('Error:' + err);
+        } else {
+          console.log('Result:' + result);
+        }
+      });
     }
-  });
+  }
 });
 
 module.exports = router;

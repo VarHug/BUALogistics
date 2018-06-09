@@ -40,15 +40,15 @@
       <!-- <cube-button @click="showPicker">失物招领</cube-button> -->
     </div>
     <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
-    <release-find :userName="user.userName" ref="releaseFind"></release-find>
-    <pub-repair :user="user" ref="pubRepair" @pubrepair="updateUserRepair"></pub-repair>
+    <pub-find :user="user" ref="releaseFind" @pubfind="addUserFind"></pub-find>
+    <pub-repair :user="user" ref="pubRepair" @pubrepair="addUserRepair"></pub-repair>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 import split from '../split/split';
 import confirm from '../confirm/confirm';
-import releaseFind from '../release-find/releaseFind';
+import pubFind from '../pubfind/pubfind';
 import BScroll from 'better-scroll';
 import pubRepair from '../pubrepair/pubrepair';
 
@@ -118,14 +118,24 @@ export default {
     },
     confirmSure() {
       this.curFind.state++;
+      this.curFind['findtype'] = 'update';
+      this.curFind['type'] = 'find';
+      this.curFind['userId'] = this.user.userId;
       console.log(this.curFind);
-      // this.$axios.post('/api/find', {
 
-      // });
-      // .then(response => {
-      //   console.log(response);
-      // });
+      this.$axios.all([this._postFind(this.curFind), this._postUser(this.curFind)]);
+
       this.confirmShow = false;
+    },
+    _postFind(obj) {
+      this.$axios.post('/api/find', {
+        params: obj
+      });
+    },
+    _postUser(obj) {
+      this.$axios.post('/api/user', {
+        params: obj
+      });
     },
     releaseFindShow() {
       this.$refs.releaseFind.show();
@@ -133,8 +143,11 @@ export default {
     pubRepairShow() {
       this.$refs.pubRepair.show();
     },
-    updateUserRepair(obj) {
+    addUserRepair(obj) {
       this.user.userRepair.unshift(obj);
+    },
+    addUserFind(obj) {
+      this.user.userFind.unshift(obj);
     }
   },
   computed: {
@@ -156,7 +169,7 @@ export default {
   components: {
     split,
     'v-confirm': confirm,
-    releaseFind,
+    pubFind,
     pubRepair
   }
 };

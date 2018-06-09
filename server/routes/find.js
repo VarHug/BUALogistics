@@ -42,8 +42,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res) {
   let findParam = req.body.params;
-  console.log(findParam);
-  if (findParam.type === 'insert') {
+  if (findParam.findtype === 'insert') {
     let find = new Find({
       name: findParam.name,
       good: findParam.good,
@@ -60,8 +59,24 @@ router.post('/', function (req, res) {
         res.send('Insert OK');
       }
     });
-  } else {
-    console.log(update)
+  } else if (findParam.findtype === 'update') {
+    let wherestr = {
+      'name': findParam.name,
+      'time': findParam.time
+    };
+    let updatestr = {
+      $set: {
+        'state': findParam.state
+      }
+    };
+
+    Find.update(wherestr, updatestr, (err, result) => {
+      if (err) {
+        console.log('Error:' + err);
+      } else {
+        console.log('Result:' + result);
+      }
+    });
   }
 
 });

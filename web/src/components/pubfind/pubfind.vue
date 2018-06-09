@@ -37,8 +37,8 @@ lostPropertyData.forEach((state) => {
 
 export default {
   props: {
-    userName: {
-      type: String
+    user: {
+      type: Object
     }
   },
   mounted() {
@@ -77,19 +77,30 @@ export default {
         } else {
           findObj['state'] = 2;
         }
-        findObj['name'] = this.userName;
+        findObj['name'] = this.user.userName;
         findObj['good'] = find[2]; // good
         findObj['time'] = new Date().getTime();
         findObj['desc'] = this.message;
-        findObj['type'] = 'insert';
+        findObj['userId'] = this.user._id;
+        findObj['findtype'] = 'insert';
+        findObj['type'] = 'find';
         console.log(findObj);
-        this.$axios.post('/api/find', {
-          params: findObj
-        }).then(response => {
-          console.log(response);
-        });
+
+        this.$emit('pubfind', findObj);
+
+        this.$axios.all([this._postFind(findObj), this._postUser(findObj)]);
       }
       this.showFlag = false;
+    },
+    _postFind(obj) {
+      this.$axios.post('/api/find', {
+        params: obj
+      });
+    },
+    _postUser(obj) {
+      this.$axios.post('/api/user', {
+        params: obj
+      });
     },
     showPicker () {
       this.lostPropertyPicker.show();

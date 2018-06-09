@@ -51,6 +51,7 @@ export default {
         repairObj['replay'] = '';
         repairObj['state'] = 0;
         repairObj['userId'] = this.user._id;
+        repairObj['type'] = 'repair';
       }
       console.log(repairObj);
       // this.$axios.post('/api/repair', {
