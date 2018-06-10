@@ -1,6 +1,10 @@
 <template>
   <div class="mine" ref="mine">
-    <div class="mine-wrapper" v-show="login">
+     <!-- v-show="login" -->
+    <div class="mine-wrapper">
+      <div class="setting" @click="setListShow">
+        <i class="cubeic-setting"></i>
+      </div>
       <div class="user">
         <div class="avatar">
           <img width="50" height="50" src="./gabe.jpg">
@@ -42,7 +46,8 @@
     <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     <pub-find :user="user" ref="releaseFind" @pubfind="addUserFind"></pub-find>
     <pub-repair :user="user" ref="pubRepair" @pubrepair="addUserRepair"></pub-repair>
-    <login v-show="!login" @userlogin="userlogin"></login>
+    <!-- <login v-show="!login" @userlogin="userlogin"></login> -->
+    <set-list :list-data="setListData" ref="setList"></set-list>
   </div>
 </template>
 
@@ -53,6 +58,7 @@ import pubFind from '../pubfind/pubfind';
 import BScroll from 'better-scroll';
 import pubRepair from '../pubrepair/pubrepair';
 import login from '../login/login';
+import setList from '../setlist/setlist';
 
 const ERR_OK = 0;
 const STATE_LOSE = 0; // 寻找中
@@ -70,7 +76,22 @@ export default {
       findConfirmTxt: '',
       confirmShow: false,
       curFind: {},
-      login: false
+      login: false,
+      setListData: [
+        {
+          type: 'loginout',
+          text: '退出'
+        }, {
+          type: 'test',
+          text: '测试'
+        }, {
+          type: 'test',
+          text: '测试'
+        }, {
+          type: 'test',
+          text: '测试'
+        }
+      ]
     };
   },
   created() {
@@ -158,6 +179,9 @@ export default {
     },
     addUserFind(obj) {
       this.user.userFind.unshift(obj);
+    },
+    setListShow() {
+      this.$refs.setList.show();
     }
   },
   computed: {
@@ -181,7 +205,8 @@ export default {
     'v-confirm': confirm,
     pubFind,
     pubRepair,
-    login
+    login,
+    setList
   }
 };
 </script>
@@ -193,6 +218,10 @@ export default {
   left 0
   bottom 50px
   width 100%
+  .setting
+    position absolute
+    top 15px
+    right 15px
   .user
     display flex
     padding 15px
@@ -260,7 +289,7 @@ export default {
       color #00a0dc
   .repair-info
     position relative
-    padding 18px 18px 0
+    padding 18px
     .title
       margin-bottom 14px
       line-height 14px
