@@ -97,4 +97,36 @@ router.post('/', function(req, res) {
   }
 });
 
+router.post('/login', function(req, res, next) {
+  let param = {
+    userId: req.body.userId,
+    userPwd: req.body.userPwd
+  };
+  User.findOne(param, function (err, doc) {
+    if (err) {
+      res.json({
+        status: 1,
+        msg: err.message
+      });
+    } else {
+      if (doc) {
+        res.cookie('userId', doc.userId, {
+          path: '/',
+          maxAge: 1000 * 60 * 60
+        });
+        res.json({
+          status: 0,
+          msg: 'ok',
+          result: doc
+        });
+      } else {
+        res.json({
+          status: 0,
+          msg: 'not',
+        })
+      }
+    }
+  });
+});
+
 module.exports = router;

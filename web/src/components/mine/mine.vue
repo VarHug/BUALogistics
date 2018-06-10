@@ -1,6 +1,6 @@
 <template>
   <div class="mine" ref="mine">
-    <div class="mine-wrapper">
+    <div class="mine-wrapper" v-show="login">
       <div class="user">
         <div class="avatar">
           <img width="50" height="50" src="./gabe.jpg">
@@ -42,6 +42,7 @@
     <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     <pub-find :user="user" ref="releaseFind" @pubfind="addUserFind"></pub-find>
     <pub-repair :user="user" ref="pubRepair" @pubrepair="addUserRepair"></pub-repair>
+    <login v-show="!login" @userlogin="userlogin"></login>
   </div>
 </template>
 
@@ -51,6 +52,7 @@ import confirm from '../confirm/confirm';
 import pubFind from '../pubfind/pubfind';
 import BScroll from 'better-scroll';
 import pubRepair from '../pubrepair/pubrepair';
+import login from '../login/login';
 
 const ERR_OK = 0;
 const STATE_LOSE = 0; // 寻找中
@@ -67,19 +69,23 @@ export default {
       user: {},
       findConfirmTxt: '',
       confirmShow: false,
-      curFind: {}
+      curFind: {},
+      login: false
     };
   },
   created() {
-    this.$axios.get('/api/user').then(response => {
-      if (response.data.status === ERR_OK) {
-        this.user = response.data.result.list[0];
-        console.log(this.user);
-        this.$nextTick(() => {
-          this._initScroll();
-        });
-      }
-    });
+    if (document.cookie) {
+      this.login = true;
+      this.$axios.get('/api/user').then(response => {
+        if (response.data.status === ERR_OK) {
+          this.user = response.data.result.list[0];
+          console.log(this.user);
+          this.$nextTick(() => {
+            this._initScroll();
+          });
+        }
+      });
+    }
   },
   methods: {
     _initScroll() {
@@ -90,6 +96,10 @@ export default {
       } else {
         this.scroll.refresh();
       }
+    },
+    userlogin(user) {
+      this.user = user;
+      this.login = true;
     },
     getFindState(state) {
       if (state === STATE_LOSE) {
@@ -170,7 +180,8 @@ export default {
     split,
     'v-confirm': confirm,
     pubFind,
-    pubRepair
+    pubRepair,
+    login
   }
 };
 </script>

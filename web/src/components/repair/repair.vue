@@ -75,6 +75,7 @@ export default {
   top 0
   left 0
   bottom 50px
+  overflow hidden
   .content
     .repair-item
       margin 0 10px
