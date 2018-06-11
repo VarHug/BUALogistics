@@ -1,7 +1,6 @@
 <template>
   <div class="mine" ref="mine">
-     <!-- v-show="login" -->
-    <div class="mine-wrapper">
+    <div class="mine-wrapper" v-show="login">
       <div class="setting" @click="setListShow">
         <i class="cubeic-setting"></i>
       </div>
@@ -46,8 +45,8 @@
     <v-confirm :message="'您确定物品已经找回了么'" :show="confirmShow" @cancel="confirmCancel" @confirm="confirmSure"></v-confirm>
     <pub-find :user="user" ref="releaseFind" @pubfind="addUserFind"></pub-find>
     <pub-repair :user="user" ref="pubRepair" @pubrepair="addUserRepair"></pub-repair>
-    <!-- <login v-show="!login" @userlogin="userlogin"></login> -->
-    <set-list :list-data="setListData" ref="setList"></set-list>
+    <login v-show="!login" @userlogin="userlogin"></login>
+    <set-list :list-data="setListData" ref="setList" @logout="userlogout"></set-list>
   </div>
 </template>
 
@@ -79,7 +78,7 @@ export default {
       login: false,
       setListData: [
         {
-          type: 'loginout',
+          type: 'logout',
           text: '退出'
         }, {
           type: 'test',
@@ -100,7 +99,7 @@ export default {
       this.$axios.get('/api/user').then(response => {
         if (response.data.status === ERR_OK) {
           this.user = response.data.result.list[0];
-          console.log(this.user);
+          // console.log(this.user);
           this.$nextTick(() => {
             this._initScroll();
           });
@@ -121,6 +120,9 @@ export default {
     userlogin(user) {
       this.user = user;
       this.login = true;
+    },
+    userlogout() {
+      this.login = false;
     },
     getFindState(state) {
       if (state === STATE_LOSE) {

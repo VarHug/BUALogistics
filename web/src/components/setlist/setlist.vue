@@ -5,7 +5,7 @@
         <div class="pullup">
           <i class="cubeic-pullup"></i>
         </div>
-        <ul class="list-content">
+        <ul class="list-content" @click="listClick($event)">
           <li class="list-item" v-for="(item, index) in listData" :key="index">{{item.text}}</li>
         </ul>
       </div>
@@ -26,11 +26,25 @@ export default {
     };
   },
   methods: {
+    _logout() {
+      this.$axios.post('/api/user/logout').then((response) => {
+        this.$emit('logout');
+      });
+    },
     show() {
       this.showFlag = !this.showFlag;
     },
     hide() {
       this.showFlag = false;
+    },
+    listClick(e) {
+      switch (e.target.innerText) {
+        case '退出':
+          this._logout();
+          break;
+        default:
+          break;
+      }
     }
   },
   components: {
@@ -70,9 +84,9 @@ export default {
       color #ffffff
       background-color rgba(7, 17, 27, 0.7)
       .list-item
-        line-height 25px
+        line-height 30px
         font-size 10px
-        height 25px
+        height 30px
         border-bottom 1px solid #000
         &:last-child
           border none

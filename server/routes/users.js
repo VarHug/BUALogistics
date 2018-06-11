@@ -51,7 +51,7 @@ router.post('/', function(req, res) {
       reply: '',
       state: param.state
     }}};
-  
+
     User.findByIdAndUpdate(id, updateStr, (err, result) => {
       if (err) {
         console.log('Error:' + err);
@@ -126,6 +126,19 @@ router.post('/login', function(req, res, next) {
         })
       }
     }
+  });
+});
+
+// 登出接口
+router.post('/logout', function (req, res, next) {
+  res.cookie('userId', '', {
+    path: '/',
+    maxAge: -1
+  });
+  res.json({
+    status: 0,
+    msg: '',
+    result: ''
   });
 });
 
