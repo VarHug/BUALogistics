@@ -96,10 +96,15 @@ export default {
   created() {
     if (document.cookie) {
       this.login = true;
-      this.$axios.get('/api/user').then(response => {
+      let userId = document.cookie.replace(/(userId=+)/, '');
+      this.$axios.get('/api/user', {
+        params: {
+          userId: userId
+        }
+      }).then(response => {
         if (response.data.status === ERR_OK) {
-          this.user = response.data.result.list[0];
-          // console.log(this.user);
+          this.user = response.data.result;
+          console.log(this.user);
           this.$nextTick(() => {
             this._initScroll();
           });

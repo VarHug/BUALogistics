@@ -21,23 +21,47 @@ mongoose.connection.on('disconnected', function () {
 });
 
 router.get('/', function (req, res, next) {
-  User.find({}, function (err, doc) {
+  let param = {
+    userId: req.query.userId,
+  };
+  User.findOne(param, function (err, doc) {
     if (err) {
       res.json({
         status: 1,
-        msg: err.msg
+        msg: err.message
       });
     } else {
-      res.json({
-        status: 0,
-        msg: '',
-        result: {
-          count: doc.length,
-          list: doc
-        }
-      });
+      if (doc) {
+        res.json({
+          status: 0,
+          msg: 'ok',
+          result: doc
+        });
+      } else {
+        res.json({
+          status: 0,
+          msg: 'not',
+        })
+      }
     }
   });
+  // User.find({}, function (err, doc) {
+  //   if (err) {
+  //     res.json({
+  //       status: 1,
+  //       msg: err.msg
+  //     });
+  //   } else {
+  //     res.json({
+  //       status: 0,
+  //       msg: '',
+  //       result: {
+  //         count: doc.length,
+  //         list: doc
+  //       }
+  //     });
+  //   }
+  // });
 });
 
 router.post('/', function(req, res) {
